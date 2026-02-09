@@ -517,6 +517,13 @@ section p {
   color: #0a66c2;
 }
 
+.mobile-menu-btn {
+  display: none;        /* hidden on desktop */
+  font-size: 28px;
+  cursor: pointer;
+  font-weight: 700;
+}
+
 /* ================= RESPONSIVE ================= */
 @media (max-width: 1024px) {
   .container { padding: 0 40px; }
@@ -526,18 +533,21 @@ section p {
 
 /* Mobile */
 @media (max-width: 768px) {
-  .container { padding: 0 20px; }
-
-  .header {
-    height: 80px;
-    padding: 0 24px;
+   
+  .nav-links {
+    display: none;
   }
+
+  .header-right {
+    display: none;     /* hide Hire Talent in header */
+  }
+  .container { padding: 0 20px; }
 
   .btn-primary {
     width: 100%;
     max-width: 320px;          /* prevents too-wide buttons */
     padding: 14px 20px;       /* better tap area */
-    font-size: 16px;          /* readable on small screens */
+    font-size: 18px;          /* readable on small screens */
     border-radius: 8px;       /* softer mobile look */
     text-align: center;
   }
@@ -553,16 +563,12 @@ section p {
     max-width: 320px;         /* nice mobile width */
     text-align: center;
     padding: 14px 20px;       /* better tap area */
-    font-size: 16px;
+    font-size: 18px;
     border-radius: 8px;
   }
 
   .btn-outline {
     border-width: 2px;
-  }
-
-  .nav-links {
-    display: none;
   }
 
   .hero {
@@ -603,4 +609,138 @@ section p {
     grid-template-columns: 1fr;
     gap: 40px;
   }
+
+  .close-btn {
+    background: none;
+    border: none;
+    font-size: 26px;
+    align-self: flex-end;
+    cursor: pointer;
+  }
+
+  .mobile-menu-btn {
+    display: block;
+    font-size: 26px;
+    cursor: pointer;
+  }
+
+  /* OVERLAY */
+  .mobile-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.45);
+    z-index: 9999;
+  }
+
+  /* SIDEBAR */
+  .mobile-sidebar {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 85%;
+    max-width: 340px;
+    height: 100vh;
+
+    background: #ffffff !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+
+    box-shadow: -12px 0 40px rgba(0,0,0,0.2);
+    animation: slideIn 0.3s ease forwards;
+  }
+
+  /* CLOSE BUTTON */
+  .close-btn {
+    background: none;
+    border: none;
+    font-size: 20px;
+    align-self: flex-end;
+    cursor: pointer;
+    margin-bottom: 20px;
+  }
+
+  /* NAV */
+  .mobile-nav {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    overflow-y: auto;
+    background: #ffffff;
+  }
+
+  .mobile-nav a {
+    font-size: 18px;
+    font-weight: 600;
+    color: #0f172a;
+    text-decoration: none;
+  }
+
+  .mobile-cta {
+    margin-top: 24px;
+  }
+
+  /* HIDE DESKTOP NAV */
+  .nav-links,
+  .header-right {
+    display: none;
+  }
+
+  /* MOBILE SERVICES DROPDOWN */
+  .mobile-services {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .mobile-services-btn {
+    background: none;
+    border: none;
+    padding: 0;
+    font-size: 18px;
+    font-weight: 600;
+    color: #0f172a;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+  }
+
+  .mobile-services-btn .arrow {
+    font-size: 14px;
+    transition: transform 0.2s ease;
+  }
+
+  .mobile-services-btn .arrow.open {
+    transform: rotate(180deg);
+  }
+
+  .mobile-services-dropdown {
+    margin-top: 12px;
+    margin-left: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .mobile-services-dropdown a,
+  .mobile-services-dropdown span {
+    font-size: 16px;
+    font-weight: 500;
+    color: #334155;
+    text-decoration: none;
+  }
+
+  @keyframes slideIn {
+    from {
+      transform: translateX(100%);
+    }
+    to {
+      transform: translateX(0);
+    }
+  }
+
 }

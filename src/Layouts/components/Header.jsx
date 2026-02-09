@@ -5,6 +5,7 @@ import { useEffect, useRef, useState } from "react";
 export default function Header() {
   const [scrolled, setScrolled] = useState(false);
   const [showServices, setShowServices] = useState(false);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const servicesRef = useRef(null);
 
   useEffect(() => {
@@ -49,9 +50,9 @@ export default function Header() {
             <div className="services-dropdown">
               <ul>
                 <li><Link to="/StaffAugmentation">Staff Augmentation</Link></li>
-                <li>Dedicated Teams</li>
-                <li>Contract / Part-Time Resources</li>
-                <li>Remote / Hybrid / Onsite Models</li>
+                <li><Link to="/">Dedicated Teams</Link></li>
+                <li><Link to="/">Contract / Part-Time Resources</Link></li>
+                <li><Link to="/">Remote / Hybrid / Onsite Models</Link></li>
               </ul>
             </div>
           )}
@@ -71,6 +72,66 @@ export default function Header() {
           Hire Talent
         </Link>
       </div>
+
+      <div
+        className="mobile-menu-btn"
+        onClick={() => setMobileMenuOpen(true)}
+      >
+        ☰
+      </div>
+
+      {mobileMenuOpen && (
+        <div className="mobile-overlay">
+          <aside
+            className="mobile-sidebar"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <button
+              className="close-btn"
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              ✕
+            </button>
+
+            <nav className="mobile-nav">
+              <Link to="/" onClick={() => setMobileMenuOpen(false)}>Home</Link>
+              
+              <div className="mobile-services">
+                <button
+                  className="mobile-services-btn"
+                  onClick={() => setShowServices(!showServices)}
+                >
+                  Services
+                  <span className={`arrow ${showServices ? "open" : ""}`}>▾</span>
+                </button>
+
+                {showServices && (
+                  <div className="mobile-services-dropdown">
+                    <span><Link to="/StaffAugmentation" onClick={() => setMobileMenuOpen(false)}>
+                      Staff Augmentation
+                    </Link></span>
+                    <span><Link to="/" onClick={() => setMobileMenuOpen(false)}>Dedicated Teams</Link></span>
+                    <span><Link to="/" onClick={() => setMobileMenuOpen(false)}>Contract / Part-Time Resources</Link></span>
+                    <span><Link to="/" onClick={() => setMobileMenuOpen(false)}>Remote / Hybrid / Onsite Models</Link></span>
+                  </div>
+                )}
+              </div>
+              <Link to="/industries" onClick={() => setMobileMenuOpen(false)}>Industries</Link>
+              <Link to="/technology" onClick={() => setMobileMenuOpen(false)}>Technology</Link>
+              <Link to="/how-it-works" onClick={() => setMobileMenuOpen(false)}>How It Works</Link>
+              <Link to="/why-us" onClick={() => setMobileMenuOpen(false)}>Why AdlerTech</Link>
+              <Link to="/case-studies" onClick={() => setMobileMenuOpen(false)}>Case Studies</Link>
+              <Link to="/about" onClick={() => setMobileMenuOpen(false)}>About Us</Link>
+              <Link to="/contact" onClick={() => setMobileMenuOpen(false)}>Contact</Link>
+
+              <Link to="/hire-talent" className="btn-primary mobile-cta">
+                Hire Talent
+              </Link>
+            </nav>
+          </aside>
+        </div>
+      )}
+
     </header>
   );
 }
