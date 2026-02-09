@@ -35,18 +35,7 @@ export default function Home() {
            <h1>IT Staff Augmentation Services for Scalable Tech Teams</h1>
 
             {/* H2 for hero headline (user-facing) */}
-            <h2>Scale Your Tech Team Faster with Trusted IT Talent</h2>
-
-            {/* H3 for subheadline */}
-            <h3>Remote • Hybrid • Onsite | Full-Time • Part-Time • Contract</h3>
-
-            {/* Hero body copy */}
-            <p>
-              AdlerTech Connect provides end-to-end IT staff augmentation services that help
-              businesses scale engineering teams quickly without long hiring cycles. From
-              remote developers to onsite IT professionals, we deliver flexible talent solutions
-              aligned with your project and budget.
-            </p>
+            <h2>Hire Remote, Hybrid, or Onsite IT Talent—Faster & Smarter</h2>
 
           {/* CTA Buttons */}
           <div className="hero-buttons">
@@ -59,19 +48,20 @@ export default function Home() {
       {/* ================= INTRO SECTION ================= */}
       <section className="intro-section">
         <div className="intro-container">
-          <p>
-            <strong>AdlerTech Connect</strong> helps growing companies and IT organizations
-            quickly deploy pre-vetted technology professionals across engineering,
-            data, AI, and digital roles—without long hiring cycles or operational
-            overhead.
-          </p>
+          {/* Hero body copy */}
+            <p>
+              AdlerTech Connect provides end-to-end <strong>IT staff augmentation services</strong> that help
+              businesses scale engineering teams quickly without long hiring cycles. From <strong>remote developers</strong> to onsite <strong>IT professionals</strong>, we deliver flexible talent solutions
+              aligned with your project and budget.
+            </p>
         </div>
       </section>
 
       {/* ================= TRUST & FEATURES SECTION ================= */}
       <section className="trust-section">
+
+        {/* Centered content */}
         <div className="trust-container">
-          {/* H2 for subsection */}
           <h2>Trusted IT Staff Augmentation Partner</h2>
 
           <p>
@@ -82,16 +72,26 @@ export default function Home() {
             without long hiring cycles—whether you need a single expert or an
             entire dedicated team.
           </p>
-
-          {/* Feature List */}
-          <ul className="trust-features">
-            <li>✔ Fast onboarding (7–14 days)</li>
-            <li>✔ Flexible engagement models</li>
-            <li>✔ India-based & global delivery</li>
-            <li>✔ Transparent pricing</li>
-            <li>✔ Dedicated account support</li>
-          </ul>
         </div>
+
+        {/* FULL WIDTH – OUTSIDE CONTAINER */}
+        <div className="trust-marquee">
+          <div className="trust-track">
+            <div className="trust-card">⚡ Fast onboarding (7–14 days)</div>
+            <div className="trust-card">🔄 Flexible engagement models</div>
+            <div className="trust-card">🌍 India-based & global delivery</div>
+            <div className="trust-card">💰 Transparent pricing</div>
+            <div className="trust-card">🤝 Dedicated account support</div>
+
+            {/* duplicate */}
+            <div className="trust-card">⚡ Fast onboarding (7–14 days)</div>
+            <div className="trust-card">🔄 Flexible engagement models</div>
+            <div className="trust-card">🌍 India-based & global delivery</div>
+            <div className="trust-card">💰 Transparent pricing</div>
+            <div className="trust-card">🤝 Dedicated account support</div>
+          </div>
+        </div>
+
       </section>
 
       {/* ================= WHY CHOOSE US SECTION ================= */}
