@@ -49,7 +49,7 @@ export default function Header() {
           {showServices && (
             <div className="services-dropdown">
               <ul>
-                <li><Link to="/StaffAugmentation">Staff Augmentation</Link></li>
+                <li><Link to="/StaffAugmentation" onClick={() => setShowServices(false)}>Staff Augmentation</Link></li>
                 <li><Link to="/">Dedicated Teams</Link></li>
                 <li><Link to="/">Contract / Part-Time Resources</Link></li>
                 <li><Link to="/">Remote / Hybrid / Onsite Models</Link></li>

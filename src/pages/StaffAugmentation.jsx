@@ -1,13 +1,16 @@
+import '../Layouts/components/staffAugmentation.css';
+
 const StaffAugmentation = () => {
   return (
     <main className="staff-augmentation-page">
 
-      {/* ================= HERO SECTION ================= */}
+      {/* ================= HERO ================= */}
       <section className="hero-section">
-        <h1>Staff Augmentation Services</h1>
+        <h1>IT Staff Augmentation Services</h1>
+
         <p className="hero-subtitle">
-          Scale your engineering team faster with pre-vetted IT talent across
-          software, data, AI, cloud, and mobile technologies.
+          Scale faster with pre-vetted engineers across software, data, AI,
+          cloud, and mobile—without long hiring cycles.
         </p>
 
         <p className="hero-meta">
@@ -15,182 +18,145 @@ const StaffAugmentation = () => {
         </p>
 
         <div className="hero-cta">
-          <button className="btn-primary">Request Resource Profiles</button>
+          <button className="btn-primary">Request Talent Profiles</button>
           <button className="btn-outline">Talk to Our Experts</button>
         </div>
       </section>
 
-      {/* ================= SERVICES SNAPSHOT ================= */}
+      {/* ================= TRUST STRIP ================= */}
+      <section className="trust-strip">
+        <div>⚡ Fast Onboarding (7–14 Days)</div>
+        <div>✅ Pre-Vetted Engineers</div>
+        <div>🌍 Global Delivery</div>
+        <div>🔁 Flexible Scaling</div>
+      </section>
+
+      {/* ================= SERVICES OVERVIEW ================= */}
       <section className="snapshot-section">
-        <h2>IT Staff Augmentation Solutions</h2>
+        <h2>Flexible IT Staff Augmentation Solutions</h2>
         <p className="section-intro">
-          Flexible staffing models designed to match your delivery needs and timelines.
+          Choose the engagement model that fits your delivery goals, timeline,
+          and budget.
         </p>
 
         <div className="snapshot-cards">
-          <div className="card">Remote Developers</div>
-          <div className="card">Hybrid Teams</div>
-          <div className="card">Onsite Deployment</div>
-          <div className="card">Contract & Part-Time Resources</div>
-          <div className="card">Dedicated Development Teams</div>
-        </div>
-
-        <p className="micro-copy">
-          Flexible, scalable IT staffing tailored to your business needs.
-        </p>
-      </section>
-
-      {/* ================= DEPLOYMENT MODELS ================= */}
-      <section className="deployment-section">
-        <h2>Deployment Models</h2>
-
-        <div className="deployment-grid">
-          <div>
-            <h3>Remote Resources</h3>
-            <p>
-              Fully remote professionals aligned with your time zone, tools, and workflows.
-            </p>
+          <div className="card">
+            <h3>Remote Engineers</h3>
+            <p>Work seamlessly with global talent aligned to your time zone.</p>
           </div>
 
-          <div>
+          <div className="card">
             <h3>Hybrid Teams</h3>
-            <p>
-              A mix of on-site and remote resources for collaboration-heavy projects.
-            </p>
+            <p>Blend onsite collaboration with remote efficiency.</p>
           </div>
 
-          <div>
-            <h3>Onsite Deployment</h3>
-            <p>
-              Engineers deployed at your location for critical or regulated environments.
-            </p>
+          <div className="card">
+            <h3>Onsite Resources</h3>
+            <p>Engineers deployed at your location for critical projects.</p>
           </div>
 
-          <div>
-            <h3>Full-Time Resources</h3>
-            <p>
-              Dedicated professionals working exclusively with your organization.
-            </p>
+          <div className="card">
+            <h3>Contract & Part-Time</h3>
+            <p>Cost-effective experts for short-term or flexible needs.</p>
           </div>
 
-          <div>
-            <h3>Part-Time & Contract</h3>
-            <p>
-              Cost-effective specialists for short-term or flexible requirements.
-            </p>
+          <div className="card">
+            <h3>Dedicated Teams</h3>
+            <p>Fully managed teams focused exclusively on your product.</p>
           </div>
         </div>
-
-        <button className="btn-primary">Request Resource Profiles</button>
       </section>
 
       {/* ================= TECH STACK ================= */}
       <section className="tech-stack-section">
-        <h2>Technology Stack Coverage</h2>
+        <h2>Technology Expertise</h2>
 
-        <div className="tech-category">
-          <h3>Frontend Technologies</h3>
-          <p>React, Angular, Vue</p>
-        </div>
+        <div className="tech-grid">
+          <div>
+            <h3>Frontend</h3>
+            <p>React, Angular, Vue</p>
+          </div>
 
-        <div className="tech-category">
-          <h3>Backend Technologies</h3>
-          <p>Node.js, Java, Python, .NET</p>
-        </div>
+          <div>
+            <h3>Backend</h3>
+            <p>Node.js, Java, Python, .NET</p>
+          </div>
 
-        <div className="tech-category">
-          <h3>Data & AI</h3>
-          <p>Data Analytics, Data Science, AI / ML, Generative AI</p>
-        </div>
+          <div>
+            <h3>Data & AI</h3>
+            <p>Analytics, AI/ML, Generative AI</p>
+          </div>
 
-        <div className="tech-category">
-          <h3>Cloud & DevOps</h3>
-          <p>AWS, Azure, GCP, Docker, Kubernetes, CI/CD</p>
-        </div>
+          <div>
+            <h3>Cloud & DevOps</h3>
+            <p>AWS, Azure, GCP, Kubernetes, CI/CD</p>
+          </div>
 
-        <div className="tech-category">
-          <h3>Mobile Development</h3>
-          <p>Android, iOS, Flutter, React Native</p>
+          <div>
+            <h3>Mobile</h3>
+            <p>iOS, Android, Flutter, React Native</p>
+          </div>
         </div>
       </section>
 
-      {/* ================= WHY ADLERTECH ================= */}
+      {/* ================= WHY US ================= */}
       <section className="why-us-section">
-        <h2>Why Choose AdlerTech Connect for Staff Augmentation</h2>
+        <h2>Why AdlerTech Connect?</h2>
 
         <ul className="why-us-list">
-          <li>Fast onboarding within 7–14 days</li>
-          <li>Pre-vetted and experienced engineers</li>
-          <li>Flexible engagement and scaling</li>
-          <li>Cost-efficient staffing models</li>
-          <li>India-based talent with global delivery</li>
+          <li>🚀 Engineers onboarded in as little as 7 days</li>
+          <li>🧠 Senior, pre-vetted IT professionals</li>
+          <li>📈 Scale teams up or down anytime</li>
+          <li>💰 Reduced hiring & operational costs</li>
+          <li>🌏 India-based talent, global standards</li>
         </ul>
       </section>
 
-      {/* ================= SOCIAL PROOF ================= */}
+      {/* ================= METRICS ================= */}
       <section className="social-proof-section">
-        <h2>Trusted IT Staff Augmentation Partner</h2>
+        <h2>Trusted Staff Augmentation Partner</h2>
 
         <div className="metrics">
           <div><strong>50+</strong><span>Engineers</span></div>
           <div><strong>20+</strong><span>Clients</span></div>
-          <div><strong>95%</strong><span>Retention Rate</span></div>
+          <div><strong>95%</strong><span>Retention</span></div>
         </div>
-
-        <p className="testimonial-note">
-          Client logos and testimonials displayed here.
-        </p>
       </section>
 
-      {/* ================= WHAT IS STAFF AUGMENTATION ================= */}
+      {/* ================= WHAT IS STAFF AUG ================= */}
       <section className="what-is-section">
         <h2>What Is Staff Augmentation?</h2>
 
         <p>
-          Staff augmentation is a flexible hiring model that allows organizations
-          to extend their existing teams with skilled professionals—without the
-          cost, time, and commitment of full-time hiring.
+          Staff augmentation allows organizations to extend their internal teams
+          with skilled professionals—without long-term hiring commitments.
         </p>
 
         <ul>
-          <li>Faster access to specialized skills</li>
-          <li>No long-term employment overhead</li>
-          <li>Scalable team size based on demand</li>
-          <li>Full control over delivery and processes</li>
+          <li>Access niche skills instantly</li>
+          <li>No recruitment overhead</li>
+          <li>Complete control over delivery</li>
+          <li>Scale teams based on demand</li>
         </ul>
-      </section>
-
-      {/* ================= ENGAGEMENT MODELS ================= */}
-      <section className="engagement-section">
-        <h2>Engagement Models</h2>
-
-        <div className="engagement-grid">
-          <div>Contract</div>
-          <div>Part-Time</div>
-          <div>Full-Time</div>
-          <div>Dedicated Development Teams</div>
-        </div>
       </section>
 
       {/* ================= USE CASES ================= */}
       <section className="use-cases-section">
         <h2>Common Use Cases</h2>
 
-        <ul>
-          <li>Product development</li>
-          <li>MVP and proof-of-concept builds</li>
-          <li>Scaling delivery teams</li>
-          <li>Filling short-term or niche skill gaps</li>
-        </ul>
+        <div className="use-case-grid">
+          <div>Product Development</div>
+          <div>MVP & POC Builds</div>
+          <div>Scaling Delivery Teams</div>
+          <div>Short-Term Skill Gaps</div>
+        </div>
       </section>
 
       {/* ================= FINAL CTA ================= */}
       <section className="final-cta">
-        <h2>Need Skilled Engineers Quickly?</h2>
-        <p>
-          Build your team without long hiring cycles or fixed costs.
-        </p>
-        <button className="btn-primary">Talk to Our Experts</button>
+        <h2>Need Skilled Engineers—Fast?</h2>
+        <p>Build high-performing teams without long hiring cycles.</p>
+        <button className="btn-primary">Schedule a Consultation</button>
       </section>
 
     </main>
