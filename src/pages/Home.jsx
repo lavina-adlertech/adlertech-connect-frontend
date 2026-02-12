@@ -182,6 +182,9 @@ export default function Home() {
           </p>
           <a href="/contact" className="btn-primary">Schedule a Call</a>
         </div>
+        <div class="cta-image">
+          <img src="/src/assets/staff-augmentation.webp" alt="IT Talent"/>
+        </div>
       </section>
     </>
   );

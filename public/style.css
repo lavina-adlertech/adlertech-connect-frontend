@@ -347,12 +347,30 @@ section p {
 /* ================= SECTIONS ================= */
 .intro-section,
 .trust-section,
-.why-choose-section,
-.cta-section {
+.why-choose-section{
   text-align: center;
   padding: 70px 20px;
 }
 
+.cta-section {
+  display: flex;               
+  align-items: center;         
+  justify-content: space-between;
+  padding: 90px 40px;          
+  gap: 40px;                    
+  text-align: left;
+  background-color: black;
+  color: #fff;
+}
+.cta-scetion .cta-image {
+  flex: 1;                      
+  text-align: right;            
+}
+.cta-section .cta-image img{
+  max-width: 700px;              
+  height: auto;
+  border-radius: 8px;           
+}
 .intro-container,
 .trust-container,
 .why-choose-container,
@@ -373,7 +391,7 @@ section p {
 .why-choose-container p,
 .cta-container p {
   font-size: 18px;
-  color: #1e293b;
+  color: #fff;
   margin-bottom: 30px;
 }
 
