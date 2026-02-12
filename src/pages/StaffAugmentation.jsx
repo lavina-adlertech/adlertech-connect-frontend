@@ -1,8 +1,61 @@
 import "../Layouts/components/staffAugmentation.css";
 import { Helmet } from "react-helmet-async";
 import heroImage from "../assets/hero_image.jpg";
+import { useState, useEffect, useRef } from "react";
 
 const StaffAugmentation = () => {
+   const [current, setCurrent] = useState(0);
+  const intervalRef = useRef(null);
+
+  const offers = [
+    {
+      title: "Software Developers",
+      img: "/src/assets/software-developere.jpg",
+    },
+    {
+      title: "Data Engineers & Analysts",
+      img: "/src/assets/data-eng.png",
+    },
+    {
+      title: "AI / ML Engineers & Generative AI Engineers",
+      img: "/src/assets/ai.jpg",
+    },
+    {
+      title: "Cloud & DevOps Engineers",
+      img: "/src/assets/cloud.avif",
+    },
+    {
+      title: "QA & Automation Specialists",
+      img: "/src/assets/automation.jpeg",
+    },
+    {
+      title: "UI/UX Designers",
+      img: "/src/assets/designer.avif",
+    },
+    {
+      title: "Technical Project Managers",
+      img: "/src/assets/managers.png",
+    },
+  ];
+
+  // Auto scroll
+  useEffect(() => {
+    intervalRef.current = setInterval(() => {
+      setCurrent((prev) => (prev + 1) % offers.length);
+    }, 3000);
+
+    return () => clearInterval(intervalRef.current);
+  }, []);
+
+  const nextSlide = () => {
+    setCurrent((prev) => (prev + 1) % offers.length);
+  };
+
+  const prevSlide = () => {
+    setCurrent((prev) =>
+      prev === 0 ? offers.length - 1 : prev - 1
+    );
+  };
   return (
     
     <main className="staff-augmentation-page">
@@ -45,207 +98,7 @@ const StaffAugmentation = () => {
           </div>
         </section>
      
-
-      {/* ================= SERVICES SNAPSHOT ================= */}
-      <section className="snapshot-section">
-        <h2>Services Snapshot</h2>
-
-        <p className="section-intro">
-          Flexible, scalable IT staffing tailored to your business needs.
-        </p>
-
-        <div className="benefits-grid">
-          <div className="card">
-            <h3>Remote Developers</h3>
-          </div>
-
-          <div className="card">
-            <h3>Hybrid Teams</h3>
-          </div>
-
-          <div className="card">
-            <h3>Onsite Deployment</h3>
-          </div>
-
-          <div className="card">
-            <h3>Contract & Part-Time Resources</h3>
-          </div>
-
-          <div className="card">
-            <h3>Dedicated Development Teams</h3>
-          </div>
-        </div>
-      </section>
-
-      {/* ================= WHAT WE OFFER ================= */}
-      <section className="staff-augmentation-page offer-section">
-        <h2>What We Offer</h2>
-
-        <div className="offer-slider">
-          <div className="offer-track">
-
-            {/* ===== ORIGINAL SET ===== */}
-
-            <div className="offer-card card1">
-              <h3>Software Developers</h3>
-              <div className="icon">
-                <svg viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2">
-                  <polyline points="16 18 22 12 16 6" />
-                  <polyline points="8 6 2 12 8 18" />
-                </svg>
-              </div>
-            </div>
-
-            <div className="offer-card card2">
-              <h3>Data Engineers & Analysts</h3>
-              <div className="icon">
-                <svg viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2">
-                  <line x1="18" y1="20" x2="18" y2="10" />
-                  <line x1="12" y1="20" x2="12" y2="4" />
-                  <line x1="6" y1="20" x2="6" y2="14" />
-                </svg>
-              </div>
-            </div>
-
-            <div className="offer-card card3">
-              <h3>AI / ML Engineers & Generative AI Engineers</h3>
-              <div className="icon">
-                <svg viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2">
-                  <circle cx="12" cy="12" r="3" />
-                  <path d="M19.4 15a1.7 1.7 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.7 1.7 0 0 0-1.82-.33" />
-                </svg>
-              </div>
-            </div>
-
-            <div className="offer-card card4">
-              <h3>Cloud & DevOps Engineers</h3>
-              <div className="icon">
-                <svg viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2">
-                  <path d="M20 17.58A5 5 0 0 0 18 9h-1.26A8 8 0 1 0 4 16.25" />
-                  <polyline points="16 16 12 12 8 16" />
-                </svg>
-              </div>
-
-            </div>
-
-            <div className="offer-card card5">
-              <h3>QA & Automation Specialists</h3>
-              <div className="icon">
-                <svg viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2">
-                  <path d="M9 3h6" />
-                  <path d="M10 3v4l-5 8a3 3 0 0 0 2.6 4.5h8.8A3 3 0 0 0 19 15l-5-8V3" />
-                </svg>
-              </div>
-            </div>
-
-            <div className="offer-card card6">
-              <h3>UI/UX Designers</h3>
-              <div className="icon">
-                <svg viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2">
-                  <circle cx="13.5" cy="6.5" r="2.5" />
-                  <circle cx="17.5" cy="10.5" r="2.5" />
-                  <circle cx="8.5" cy="7.5" r="2.5" />
-                  <circle cx="6.5" cy="13.5" r="2.5" />
-                  <path d="M12 22a10 10 0 1 1 0-20" />
-                </svg>
-              </div>
-            </div>
-
-            <div className="offer-card card7">
-              <h3>Technical Project Managers</h3>
-              <div className="icon">
-                <svg viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2">
-                  <rect x="9" y="2" width="6" height="4" rx="1" />
-                  <path d="M9 4H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2h-4" />
-                  <line x1="9" y1="12" x2="15" y2="12" />
-                  <line x1="9" y1="16" x2="15" y2="16" />
-                </svg>
-              </div>
-            </div>
-
-            {/* ===== DUPLICATE FOR LOOP ===== */}
-
-            <div className="offer-card card1">
-              <h3>Software Developers</h3>
-              <div className="icon">
-                <svg viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2">
-                  <polyline points="16 18 22 12 16 6" />
-                  <polyline points="8 6 2 12 8 18" />
-                </svg>
-              </div>
-            </div>
-
-            <div className="offer-card card2">
-              <h3>Data Engineers & Analysts</h3>
-              <div className="icon">
-                <svg viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2">
-                  <line x1="18" y1="20" x2="18" y2="10" />
-                  <line x1="12" y1="20" x2="12" y2="4" />
-                  <line x1="6" y1="20" x2="6" y2="14" />
-                </svg>
-              </div>
-            </div>
-
-            <div className="offer-card card3">
-              <h3>AI / ML Engineers & Generative AI Engineers</h3>
-              <div className="icon">
-                <svg viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2">
-                  <circle cx="12" cy="12" r="3" />
-                  <path d="M19.4 15a1.7 1.7 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.7 1.7 0 0 0-1.82-.33" />
-                </svg>
-              </div>
-            </div>
-
-            <div className="offer-card card4">
-              <h3>Cloud & DevOps Engineers</h3>
-              <div className="icon">
-                <svg viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2">
-                  <path d="M20 17.58A5 5 0 0 0 18 9h-1.26A8 8 0 1 0 4 16.25" />
-                  <polyline points="16 16 12 12 8 16" />
-                </svg>
-              </div>
-            </div>
-
-            <div className="offer-card card5">
-              <h3>QA & Automation Specialists</h3>
-              <div className="icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2">
-                <path d="M9 3h6" />
-                <path d="M10 3v4l-5 8a3 3 0 0 0 2.6 4.5h8.8A3 3 0 0 0 19 15l-5-8V3" />
-              </svg>
-            </div>
-            </div>
-
-            <div className="offer-card card6">
-              <h3>UI/UX Designers</h3>
-              <div className="icon">
-                <svg viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2">
-                  <circle cx="13.5" cy="6.5" r="2.5" />
-                  <circle cx="17.5" cy="10.5" r="2.5" />
-                  <circle cx="8.5" cy="7.5" r="2.5" />
-                  <circle cx="6.5" cy="13.5" r="2.5" />
-                  <path d="M12 22a10 10 0 1 1 0-20" />
-                </svg>
-              </div>
-            </div>
-
-            <div className="offer-card card7">
-              <h3>Technical Project Managers</h3>
-              <div className="icon">
-                <svg viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2">
-                  <rect x="9" y="2" width="6" height="4" rx="1" />
-                  <path d="M9 4H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2h-4" />
-                  <line x1="9" y1="12" x2="15" y2="12" />
-                  <line x1="9" y1="16" x2="15" y2="16" />
-                </svg>
-              </div>
-            </div>
-
-          </div>
-        </div>
-      </section>
-
-      {/* ================= WHAT IS STAFF AUGMENTATION ================= */}
+     {/* ================= WHAT IS STAFF AUGMENTATION ================= */}
       <section className="what-is-section">
         <h2>What is Staff Augmentation?</h2>
 
@@ -255,7 +108,7 @@ const StaffAugmentation = () => {
           of full-time hiring.
         </p>
 
-        <h3 style={{textAlign: "center",marginTop: "18px"}}>Benefits</h3>
+        {/* <h3 style={{textAlign: "center",marginTop: "18px"}}>Benefits</h3>
 
         <div className="benefits-grid">
           <div className="benefit-card">No lengthy recruitment cycles</div>
@@ -263,35 +116,273 @@ const StaffAugmentation = () => {
           <div className="benefit-card">Access to specialized skills instantly</div>
           <div className="benefit-card">Scale up or down based on demand</div>
           <div className="benefit-card">Full project control</div>
+        </div> */}
+      </section>
+
+      {/* ================= BENEFITS SECTION (ENHANCED) ================= */}
+      <section className="benefits-section">
+        <div className="benefits-container">
+
+          {/* LEFT CONTENT */}
+          <div className="benefits-left">
+
+            <span className="benefits-tag">
+              BENEFITS OF STAFF AUGMENTATION
+            </span>
+
+            {/* <p className="benefits-subtitle">
+              Access pre-vetted top-tier IT professionals ready to integrate
+              seamlessly into your team.
+            </p> */}
+
+            <div className="benefits-accordion">
+
+              <div className="benefit-item active">
+                <div className="benefit-header">
+                  ✔ No lengthy recruitment cycles
+                </div>
+                <div className="benefit-content">
+                  Skip job postings, resume screening, interviews, and onboarding delays.
+                  Get pre-vetted developers deployed quickly so your projects start faster.
+                </div>
+              </div>
+
+              <div className="benefit-item">
+                <div className="benefit-header">
+                  ✔ Reduced hiring & operational costs
+                </div>
+                <div className="benefit-content">
+                  Save on recruitment expenses, infrastructure, employee benefits,
+                  and long-term payroll commitments while maintaining high productivity.
+                </div>
+              </div>
+
+              <div className="benefit-item">
+                <div className="benefit-header">
+                  ✔ Access to specialized skills instantly
+                </div>
+                <div className="benefit-content">
+                  Tap into experienced professionals across AI, Cloud, DevOps,
+                  Data Engineering, Full-Stack, and more — exactly when you need them.
+                </div>
+              </div>
+
+              <div className="benefit-item">
+                <div className="benefit-header">
+                  ✔ Scale up or down based on demand
+                </div>
+                <div className="benefit-content">
+                  Quickly expand your team during peak workloads and scale down
+                  when project needs reduce — without long-term commitments.
+                </div>
+              </div>
+
+              <div className="benefit-item">
+                <div className="benefit-header">
+                   ✔ Full Project Control
+                  </div>
+                <div className="benefit-content">
+                  Maintain complete ownership of your workflows, tools, and processes
+                  while augmented team members work as an extension of your in-house team.
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          {/* RIGHT SIDE IMAGES */}
+          <div className="benefits-right">
+
+            <div className="profile-card card1">
+              <img src="/src/assets/dev1.jpg" alt="Developer 1" />
+              <h4>Rahul M.</h4>
+              <p>Sr. Data Scientist</p>
+            </div>
+
+            <div className="profile-card card2">
+              <img src="/src/assets/dev2.jpg" alt="Developer 2" />
+              <h4>Maria P.</h4>
+              <p>Sr. Frontend Developer</p>
+            </div>
+
+            <div className="profile-card card3">
+              <img src="/src/assets/dev4.webp" alt="Developer 3" />
+              <h4>Anita L.</h4>
+              <p>Sr. Cloud Engineer</p>
+            </div>
+
+          </div>
+
         </div>
       </section>
+
+      {/* ================= SERVICES SNAPSHOT ================= */}
+      <section className="snapshot-section">
+  <h2>Services Snapshot</h2>
+
+  <p className="section-intro">
+    Flexible, scalable IT staffing tailored to your business needs.
+  </p>
+
+  <div className="snapshot-grid">
+
+    <div className="snapshot-card">
+      <div className="snapshot-icon">📡</div>
+      <h3>Remote Developers</h3>
+      <p>
+        Hire experienced remote engineers working in your time zone,
+        aligned with your processes and delivery goals.
+      </p>
+    </div>
+
+    <div className="snapshot-card">
+      <div className="snapshot-icon">👥</div>
+      <h3>Hybrid Teams</h3>
+      <p>
+        Combine onsite collaboration with remote flexibility
+        for optimized productivity and scalability.
+      </p>
+    </div>
+
+    <div className="snapshot-card">
+      <div className="snapshot-icon">🏢</div>
+      <h3>Onsite Deployment</h3>
+      <p>
+        Deploy skilled professionals directly at your location
+        for mission-critical or regulated projects.
+      </p>
+    </div>
+
+    <div className="snapshot-card">
+      <div className="snapshot-icon">🔄</div>
+      <h3>Dedicated Teams</h3>
+      <p>
+        Fully managed development teams focused exclusively
+        on your product roadmap and business objectives.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+      {/* ================= WHAT WE OFFER ================= */}
+      <section className="offer-section">
+      <h2 className="section-title">What We Offer</h2>
+
+      <div className="slider-wrapper">
+
+        <button className="arrow left" onClick={prevSlide}>
+          &#10094;
+        </button>
+
+        <div
+          className="offer-track"
+          style={{
+            transform: `translateX(-${current * 100}%)`,
+          }}
+        >
+          {offers.map((item, index) => (
+            <div className="offer-card" key={index}>
+              
+              {/* Image ABOVE Heading */}
+              <div className="offer-image">
+                <img src={item.img} alt={item.title} />
+              </div>
+
+              <h3>{item.title}</h3>
+            </div>
+          ))}
+        </div>
+
+        {/* <button className="arrow right" onClick={nextSlide}>
+          &#10095;
+        </button> */}
+      </div>
+
+      {/* Dots */}
+      <div className="dots">
+        {offers.map((_, index) => (
+          <span
+            key={index}
+            className={`dot ${current === index ? "active" : ""}`}
+            onClick={() => setCurrent(index)}
+          ></span>
+        ))}
+      </div>
+    </section>
 
       {/* ================= ENGAGEMENT MODELS ================= */}
       <section className="engagement-section">
-        <h2>Engagement Models</h2>
+  <h2 className="section-title">Engagement Models</h2>
 
-        <div className="engagement-grid">
-          <div className="card">
-            <h3>Contract</h3>
-            <p>Short-term experts for specific project needs.</p>
-          </div>
+  {/* Contract */}
+  <div className="engagement-row">
+    <div className="engagement-content">
+      <h3>Contract</h3>
+      <p>
+        Short-term experts hired for specific project requirements, ensuring fast
+        execution and flexible scaling. Ideal for urgent deliverables, technology
+        migrations, or specialized tasks that require immediate expertise without
+        long-term commitment. This model helps businesses accelerate timelines while
+        maintaining full operational control and cost efficiency.
+      </p>
+    </div>
+    <div className="engagement-image">
+      <img src="/src/assets/contract.jpg" alt="Contract Model" />
+    </div>
+  </div>
 
-          <div className="card">
-            <h3>Part-Time</h3>
-            <p>Flexible specialists aligned to your budget and scope.</p>
-          </div>
+  {/* Part-Time (Reverse) */}
+  <div className="engagement-row reverse">
+    <div className="engagement-content">
+      <h3>Part-Time</h3>
+      <p>
+        Flexible specialists aligned with your budget and project scope, delivering
+        consistent progress without the cost of a full-time hire. This model is
+        perfect for startups and growing businesses that require expert support on a
+        limited schedule while maintaining productivity, quality, and agility.
+      </p>
+    </div>
+    <div className="engagement-image">
+      <img src="/src/assets/part-time.jpg" alt="Part Time Model" />
+    </div>
+  </div>
 
-          <div className="card">
-            <h3>Full-Time</h3>
-            <p>Dedicated professionals working exclusively for your team.</p>
-          </div>
+  {/* Full-Time */}
+  <div className="engagement-row">
+    <div className="engagement-content">
+      <h3>Full-Time</h3>
+      <p>
+        Dedicated professionals working exclusively for your organization, fully
+        integrated with your internal teams and workflows. This model ensures
+        long-term collaboration, deeper product understanding, and consistent
+        performance while reducing recruitment complexity and operational overhead.r your organization,
+        fully integrated with your internal teams.
+      </p>
+    </div>
+    <div className="engagement-image">
+      <img src="/src/assets/full-time.webp" alt="Full Time Model" />
+    </div>
+  </div>
 
-          <div className="card">
-            <h3>Dedicated Teams</h3>
-            <p>Fully managed development teams focused on your product roadmap.</p>
-          </div>
-        </div>
-      </section>
+  {/* Dedicated Teams (Reverse) */}
+  <div className="engagement-row reverse">
+    <div className="engagement-content">
+      <h3>Dedicated Teams</h3>
+      <p>
+        Fully managed development teams focused on your product roadmap and business
+        objectives. From planning and design to development and deployment, the team
+        operates as an extension of your company—ensuring scalability, faster
+        innovation cycles, and seamless collaboration with complete transparency.
+      </p>
+    </div>
+    <div className="engagement-image">
+      <img src="/src/assets/team.webp" alt="Dedicated Team Model" />
+    </div>
+  </div>
+
+</section>
+
 
       {/* ================= DEPLOYMENT MODELS (VERY IMPORTANT) ================= */}
       <section className="deployment-section">
@@ -343,24 +434,70 @@ const StaffAugmentation = () => {
 
       {/* ================= USE CASES ================= */}
       <section className="use-case-section">
-        <h2>Use Cases</h2>
+  <h2>Use Cases</h2>
 
-        <div className="use-case-grid">
-          <div className="card">Product Development</div>
-          <div className="card">MVP Building</div>
-          <div className="card">Scaling Delivery</div>
-          <div className="card">Skill Gap Filling</div>
-        </div>
-      </section>
+  <div className="use-case-grid">
+
+    <div className="use-card">
+      <img src="/src/assets/product.avif" alt="Product Development" />
+      <div className="use-card-content">
+        {/* <span className="use-tag">USE CASE</span> */}
+        <h3>Product Development Acceleration</h3>
+        <p>Build and launch scalable products faster with dedicated engineering support.</p>
+        <a href="#">Read More</a>
+      </div>
+    </div>
+
+    <div className="use-card">
+      <img src="/src/assets/mvp.webp" alt="MVP Building" />
+      <div className="use-card-content">
+        {/* <span className="use-tag">USE CASE</span> */}
+        <h3>MVP Development for Startups</h3>
+        <p>Rapid MVP development to validate ideas and attract early investors.</p>
+        <a href="#">Read More</a>
+      </div>
+    </div>
+
+    <div className="use-card">
+      <img src="/src/assets/scaling.png" alt="Scaling Delivery" />
+      <div className="use-card-content">
+        {/* <span className="use-tag">USE CASE</span> */}
+        <h3>Scaling Engineering Teams</h3>
+        <p>Expand delivery capacity with skilled professionals aligned to your roadmap.</p>
+        <a href="#">Read More</a>
+      </div>
+    </div>
+
+        <div className="use-card">
+      <img src="/src/assets/skill-gap.webp" alt="Skill Gap Filling" />
+      <div className="use-card-content">
+        {/* <span className="use-tag">USE CASE</span> */}
+        <h3>Skill Gap Filling</h3>
+        <p>
+          Bridge critical skill gaps with specialized experts in emerging
+          technologies, ensuring project continuity and high-quality outcomes.
+        </p>
+        <a href="#">Read More</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
 
       {/* ================= FINAL CTA ================= */}
-      <section className="final-cta">
-        <h2>Need Ready-to-Deploy IT Talent?</h2>
-        <p>
-          Whether you need to fill a short-term gap or scale long-term delivery, we’ve got you covered.
-        </p>
-        <button className="btn-primary">👉 Request Resource Profiles</button>
-      </section>
+      <section class="final-cta">
+  <div class="cta-content">
+    <h2>Need Ready-to-Deploy IT Talent?</h2>
+    <p>Whether you need to fill a short-term gap or scale long-term delivery, we’ve got you covered.</p>
+    <button class="btn-primary">👉 Request Resource Profiles</button>
+  </div>
+  <div class="cta-image">
+    <img src="/src/assets/it-staff-augmentation-hero.png" alt="IT Talent"/>
+  </div>
+</section>
+
+
 
     </main>
   );
