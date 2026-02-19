@@ -1,8 +1,45 @@
 import "../Layouts/components/contract.css";
 import { Helmet } from "react-helmet-async";
+import { useEffect, useRef } from "react";
 import heroImage from "../assets/contract-hero.jpg";
+import { useNavigate } from "react-router-dom";
 
 const Contract = () => {
+  const trackRef = useRef(null);
+  const navigate = useNavigate();
+
+  useEffect(() => {
+  const track = document.querySelector(".contract-carousel-track");
+  const slides = document.querySelectorAll(".contract-slide");
+  const prevBtn = document.querySelector(".prev");
+  const nextBtn = document.querySelector(".next");
+
+  let index = 0;
+  const totalSlides = slides.length;
+
+  function moveToSlide(i) {
+    index = i;
+    track.style.transform = `translateX(-${index * 100}%)`;
+  }
+
+  function nextSlide() {
+    index = (index + 1) % totalSlides;
+    moveToSlide(index);
+  }
+
+  function prevSlide() {
+    index = (index - 1 + totalSlides) % totalSlides;
+    moveToSlide(index);
+  }
+
+  nextBtn.addEventListener("click", nextSlide);
+  prevBtn.addEventListener("click", prevSlide);
+
+  const autoSlide = setInterval(nextSlide, 4000);
+
+  return () => clearInterval(autoSlide);
+
+}, []);
     return (
         <>
             <Helmet>
@@ -20,10 +57,6 @@ const Contract = () => {
                 <img src={heroImage} alt="Hero" />
                 <div className="contract-hero-content">
                     <h1>Contract & Part-Time IT Resource Deployment</h1>
-                    {/* <p className="contract-hero-meta"><strong>
-                        Our dedicated development team model is ideal for companies seeking consistent, scalable delivery
-                        without managing recruitment and HR operations.
-                    </strong></p> */}
                 </div>
             </section>
 
@@ -116,50 +149,79 @@ const Contract = () => {
             {/* IT Resource Capabilities */}
             <section className="contract-capabilities-section">
               <div className="contract-capabilities-container">
-                
+
                 <h2 className="contract-capabilities-title">
                   Our IT Resource Capabilities
                 </h2>
 
-                <p className="contract-capabilities-subtitle">
-                  We provide skilled professionals across various domains, including:
-                </p>
+                <div className="contract-carousel">
 
-                <div className="contract-capabilities-grid">
+                  <div className="contract-carousel-track">
+                    
+                    <div className="contract-slide" onClick={() => navigate("")}>
+                      <img src="/src/assets/web.jpg" alt="Web Developers" />
+                      <div className="contract-slide-overlay">
+                        Web & Mobile Application Developers
+                      </div>
+                    </div>
 
-                  <div className="contract-capability-card">
-                    Web & Mobile Application Developers
+                    <div className="contract-slide">
+                      <img src="/src/assets/full-stack.png" alt="Full Stack" />
+                      <div className="contract-slide-overlay">
+                        Full Stack Developers
+                      </div>
+                    </div>
+
+                    <div className="contract-slide">
+                      <img src="/src/assets/ui.jpeg" alt="UI UX" />
+                      <div className="contract-slide-overlay">
+                        UI/UX Designers
+                      </div>
+                    </div>
+
+                    <div className="contract-slide">
+                      <img src="/src/assets/devops.webp" alt="DevOps" />
+                      <div className="contract-slide-overlay">
+                        Cloud & DevOps Engineers
+                      </div>
+                    </div>
+
+                    <div className="contract-slide">
+                      <img src="/src/assets/qa-testing.webp" alt="QA" />
+                      <div className="contract-slide-overlay">
+                        QA & Testing Professionals
+                      </div>
+                    </div>
+
+                    <div className="contract-slide">
+                      <img src="/src/assets/db.avif" alt="DBA" />
+                      <div className="contract-slide-overlay">
+                        Database Administrators
+                      </div>
+                    </div>
+
+                    <div className="contract-slide">
+                      <img src="/src/assets/IT-support.jpg" alt="Support" />
+                      <div className="contract-slide-overlay">
+                        IT Support & Maintenance Specialists
+                      </div>
+                    </div>
+
+                    <div className="contract-slide">
+                      <img src="/src/assets/project-managers.jpg" alt="PM" />
+                      <div className="contract-slide-overlay">
+                        Project Managers
+                      </div>
+                    </div>
+
                   </div>
 
-                  <div className="contract-capability-card">
-                    Full Stack Developers
-                  </div>
-
-                  <div className="contract-capability-card">
-                    UI/UX Designers
-                  </div>
-
-                  <div className="contract-capability-card">
-                    Cloud & DevOps Engineers
-                  </div>
-
-                  <div className="contract-capability-card">
-                    QA & Testing Professionals
-                  </div>
-
-                  <div className="contract-capability-card">
-                    Database Administrators
-                  </div>
-
-                  <div className="contract-capability-card">
-                    IT Support & Maintenance Specialists
-                  </div>
-
-                  <div className="contract-capability-card">
-                    Project Managers
-                  </div>
+                  {/* Arrows */}
+                  <button className="carousel-btn prev">❮</button>
+                  <button className="carousel-btn next">❯</button>
 
                 </div>
+
               </div>
             </section>
 
