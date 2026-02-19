@@ -173,7 +173,7 @@ export default function Home() {
       </section>
 
       {/* ================= CALL TO ACTION SECTION ================= */}
-      <section className="cta-section">
+      {/* <section className="cta-section">
         <div className="cta-container">
           <h2>Ready to Scale Your Tech Team?</h2>
           <p>
@@ -185,7 +185,7 @@ export default function Home() {
         <div class="cta-image">
           <img src="/src/assets/staff-augmentation.webp" alt="IT Talent"/>
         </div>
-      </section>
+      </section> */}
     </>
   );
 }

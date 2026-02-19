@@ -7,7 +7,7 @@
   display: flex;
   align-items: center;       /* vertically center */
   justify-content: flex-end; /* right side for hero content */
-  text-align: right;
+  text-align: center;
   background: linear-gradient(to right, rgba(0,0,0,0.4), rgba(0,0,0,0.1)); /* subtle overlay */
 }
 
@@ -28,7 +28,7 @@
   max-width: 900px;
   padding: 0 40px;
   color: #fff; /* white text for better contrast */
-  text-align: right;
+  text-align: center;
 }
 
 .dedicated-hero-content h1 {
@@ -279,38 +279,58 @@ ol {
   max-width: 600px;
   line-height: 1.6;
 }
-/* Responsive */
+/* Responsive Adjustments */
 @media (max-width: 1024px) {
   .dedicated-hero-content h1 {
     font-size: 38px;
   }
-
   .dedicated-hero-content p {
     font-size: 20px;
   }
-
   .dedicated-benefits-list li {
     width: 45%;
   }
 }
 
 @media (max-width: 768px) {
+  /* Hero section stacking */
   .dedicated-hero {
     justify-content: center;
     text-align: center;
   }
-
   .dedicated-hero-content {
     padding: 0 20px;
     text-align: center;
   }
+  .dedicated-hero-cta {
+    justify-content: center;
+  }
 
+  /* Benefits list full width */
   .dedicated-benefits-list {
     flex-direction: column;
     gap: 20px;
   }
-
   .dedicated-benefits-list li {
     width: 100%;
   }
+
+  /* Timeline stack vertically */
+  .process-step {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  .step-content {
+    margin-left: 0;
+    margin-top: 15px;
+  }
+  .process-timeline::before {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  .step-icon {
+    margin-bottom: 10px;
+  }
 }
+
