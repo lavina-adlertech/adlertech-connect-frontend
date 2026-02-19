@@ -102,14 +102,14 @@ const Dedicated = () => {
 
 
             {/* Why Choose Us */}
-            <section className="dedicated-hero-section">
+            {/* <section className="dedicated-hero-section">
                 <h2>Why Choose AdlerTech Connect?</h2>
                 <p>
                     We specialize in providing dedicated teams that help startups, SMEs, and enterprises achieve their project goals efficiently. 
                     Our teams are experienced in multiple technologies, follow agile practices, and are committed to delivering 
                     high-quality solutions tailored to your business needs.
                 </p>
-            </section>
+            </section> */}
 
             {/* Call to Action */}
             <section className="dedicated-hero-section hero-bg">
