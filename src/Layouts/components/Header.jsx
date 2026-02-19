@@ -52,7 +52,7 @@ export default function Header() {
                 <li><Link to="/StaffAugmentation" onClick={() => setShowServices(false)}>Staff Augmentation</Link></li>
                 <li><Link to="/dedicated" onClick={() => setShowServices(false)}>Dedicated Teams</Link></li>
                 <li><Link to="/contract" onClick={() => setShowServices(false)}>Contract / Part-Time Resources</Link></li>
-                <li><Link to="/" onClick={() => setShowServices(false)}>Remote / Hybrid / Onsite Models</Link></li>
+                <li><Link to="/remote" onClick={() => setShowServices(false)}>Remote / Hybrid / Onsite Models</Link></li>
               </ul>
             </div>
           )}
@@ -112,7 +112,7 @@ export default function Header() {
                     </Link></span>
                     <span><Link to="/dedicated" onClick={() => setMobileMenuOpen(false)}>Dedicated Teams</Link></span>
                     <span><Link to="/contract" onClick={() => setMobileMenuOpen(false)}>Contract / Part-Time Resources</Link></span>
-                    <span><Link to="/" onClick={() => setMobileMenuOpen(false)}>Remote / Hybrid / Onsite Models</Link></span>
+                    <span><Link to="/remote" onClick={() => setMobileMenuOpen(false)}>Remote / Hybrid / Onsite Models</Link></span>
                   </div>
                 )}
               </div>

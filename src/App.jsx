@@ -5,6 +5,7 @@ import StaffAugmentation from "./pages/StaffAugmentation";
 import Dedicated from "./pages/Dedicated";
 import Contact from "./pages/Contact";
 import Contract from "./pages/Contract";
+import Remote from "./pages/Remote";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
         <Route path="/StaffAugmentation" element={<StaffAugmentation />} />
         <Route path="/dedicated" element={<Dedicated />} />
         <Route path="/contract" element={<Contract />} />
+        <Route path="/remote" element={<Remote />} />
         <Route path="/contact" element={<Contact />} />
       </Route>
     </Routes>
