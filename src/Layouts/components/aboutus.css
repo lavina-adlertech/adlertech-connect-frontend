@@ -1,0 +1,228 @@
+/* HERO */
+.about-hero {
+  
+  position: relative;
+  height: 700px;
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.about-hero img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  filter: brightness(0.75);
+  object-fit: cover;
+}
+.about-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.35);
+  z-index: 1;
+}
+
+.about-hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 900px;
+  padding: 0 20px;
+  color: white;
+}
+
+.about-hero-content h1 {
+  font-size: 42px;
+  font-weight: 800;
+}
+
+.about-section {
+  padding: 100px 20px;
+  background: #f4f6f9;
+}
+
+.about-container {
+  max-width: 1100px;
+  margin: auto;
+}
+
+/* Intro */
+.about-intro {
+  text-align: center;
+  margin-bottom: 80px;
+}
+
+.about-intro h1 {
+  font-size: 22px;
+  color: #13405B;
+  margin-bottom: 20px;
+}
+
+.about-intro p {
+  font-size: 18px;
+  color: #555;
+  max-width: 750px;
+  margin: auto;
+  line-height: 1.7;
+}
+
+/* Vision & Mission Grid */
+.about-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 40px;
+  margin-bottom: 70px;
+}
+
+.about-card {
+  background: #13405B;
+  padding: 40px;
+  border-radius: 18px;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.05);
+  transition: 0.3s ease;
+}
+
+.about-card:hover {
+  transform: translateY(-6px);
+}
+
+.about-card h3 {
+  font-size: 24px;
+  margin-bottom: 15px;
+  color: white;
+}
+
+.about-card p {
+  color: white;
+  line-height: 1.6;
+}
+
+/* Big Cards */
+.about-big-card {
+  background: #13405B;
+  padding: 50px;
+  border-radius: 20px;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.06);
+  margin-bottom: 50px;
+  transition: 0.3s ease;
+}
+
+.about-big-card:hover {
+  transform: translateY(-8px);
+}
+
+.about-big-card h3 {
+  font-size: 26px;
+  margin-bottom: 20px;
+  color: white;
+}
+
+.about-big-card p {
+  color: white;
+  line-height: 1.7;
+  margin-bottom: 20px;
+}
+
+.about-big-card ul {
+  list-style: none;
+  padding: 0;
+}
+
+.about-big-card ul li {
+  margin-bottom: 12px;
+  padding-left: 20px;
+  position: relative;
+  color: white;
+}
+
+.about-big-card ul li::before {
+  content: "✔";
+  position: absolute;
+  left: 0;
+  color: #FF8E00;
+  font-size: 14px;
+}
+
+/* Responsive */
+/* =========================
+   MOBILE VIEW FIX
+========================= */
+@media (max-width: 768px) {
+
+  /* Hero */
+  .about-hero {
+    min-height: 70vh;   /* instead of fixed 700px */
+    height: auto;
+    padding: 40px 15px;
+  }
+
+  .about-hero img {
+  height: 100%;
+  object-fit: cover;
+}
+
+  .about-hero-content {
+    padding: 0;
+  }
+
+  .about-hero-content h1 {
+    font-size: 28px;
+    line-height: 1.3;
+  }
+
+  /* Section */
+  .about-section {
+    padding: 60px 15px;
+  }
+
+  /* Intro */
+  .about-intro {
+    margin-bottom: 40px;
+  }
+
+  .about-intro h1 {
+    font-size: 18px;
+  }
+
+  .about-intro p {
+    font-size: 15px;
+    line-height: 1.6;
+  }
+
+  /* Grid */
+  .about-grid {
+    gap: 20px;
+    margin-bottom: 40px;
+  }
+
+  .about-card {
+    padding: 25px 20px;
+  }
+
+  .about-card h3 {
+    font-size: 20px;
+  }
+
+  .about-card p {
+    font-size: 14px;
+  }
+
+  /* Big Cards */
+  .about-big-card {
+    padding: 25px 20px;
+  }
+
+  .about-big-card h3 {
+    font-size: 20px;
+  }
+
+  .about-big-card p,
+  .about-big-card ul li {
+    font-size: 14px;
+  }
+
+}

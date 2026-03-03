@@ -1,0 +1,35 @@
+.hiredev-hero {
+  position: relative;
+  height: 550px;
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background-color: #222; /* fallback */
+  background-image: url('../../assets/hire-developer.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  filter: brightness(0.75);
+  z-index: 1;
+}
+
+.hiredev-hero img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+}
+
+.hiredev-hero h1 {
+  position: relative;
+  z-index: 2;
+  color: #ffffff;
+  font-size: 52px;
+  font-weight: 700;
+  text-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+}

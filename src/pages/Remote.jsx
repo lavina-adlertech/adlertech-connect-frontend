@@ -10,7 +10,7 @@ export default function Remote() {
         </title>
         <meta
           name="description"
-          content="Hire pre-vetted remote developers for web, mobile, data, and AI projects. Flexible contracts. Fast onboarding."
+          content="Hire pre-vetted remote developers for web, mobile, data and AI projects. Flexible contracts. Fast onboarding."
         />
       </Helmet>
 
@@ -50,7 +50,7 @@ export default function Remote() {
 
         <p>
             <strong>Remote working</strong> allows professionals to work from any location outside a traditional office environment. 
-            Using digital collaboration tools, remote teams stay connected, productive, and aligned with business goals.
+            Using digital collaboration tools, remote teams stay connected, productive and aligned with business goals.
         </p>
 
         <p>
@@ -60,7 +60,7 @@ export default function Remote() {
 
         <p>
             At AdlerTech Connect, we provide skilled remote and hybrid IT professionals who seamlessly integrate into your team, 
-            ensuring productivity, scalability, and cost efficiency.
+            ensuring productivity, scalability and cost efficiency.
         </p>
         </div>
 

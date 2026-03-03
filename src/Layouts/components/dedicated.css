@@ -27,7 +27,7 @@
   z-index: 2;
   max-width: 900px;
   padding: 0 40px;
-  color: #fff; /* white text for better contrast */
+  color: white; /* white text for better contrast */
   text-align: center;
 }
 
@@ -41,87 +41,64 @@
 .dedicated-hero-content p {
   font-size: 22px;
   font-weight: 500;
-  margin-bottom: 30px;
-  line-height: 1.6;
+  color: white;
 }
 
-/* CTA Buttons */
-.dedicated-hero-cta button {
-  background: linear-gradient(90deg, #4f46e5, #6366f1);
-  color: #fff;
-  font-weight: 600;
-  border: none;
-  padding: 14px 28px;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-.dedicated-hero-cta button:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+.trust-heading {
+  text-align: center;
+  font-size: 18px;
+  margin-bottom: 20px;
+  color: #13405B;
 }
 
 /* Sections */
 .dedicated-hero-section {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 80px 20px;
+  padding: 40px 20px;
   text-align: center;
 }
 
-.dedicated-hero-section h2 {
-  font-size: 36px;
-  font-weight: 800;
+.dedicated-hero-section h1 {
+  font-size: 22px;
   margin-bottom: 20px;
-  color: #1f2937; /* dark gray */
 }
 
 .dedicated-hero-section p {
   font-size: 18px;
-  line-height: 1.8;
   color: #4b5563;
   max-width: 900px;
-  margin: 0 auto 30px;
 }
 
 /* Benefits List — no bullets */
 .dedicated-benefits-list {
   display: flex;
-  flex-wrap: wrap;
   justify-content: center;
-  gap: 30px;
-  margin-top: 40px;
-  list-style: none; /* remove default bullets */
-  padding: 0;
+  flex-wrap: nowrap;   /* force one row */
+  gap: 25px;
+  list-style: none;
 }
 
 .dedicated-benefits-list li {
-  background: #fff;
-  border-radius: 12px;
-  box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+  background: #13405B;
+  border: 3px solid #FF8E00;
+  border-radius: 14px;
   padding: 25px;
-  width: 280px;
-  font-size: 16px;
+  width: 220px;   /* fixed width to fit in one row */
+  color: white;
+  font-size: 15px;
   text-align: left;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  position: relative;
-  list-style: none; /* ensure no bullet */
+  transition: all 0.3s ease;
 }
 
-.dedicated-benefits-list li::before {
-  color: #4f46e5;
-  font-weight: bold;
-  position: absolute;
-  left: 15px;
-  top: 15px;
-  font-size: 18px;
+.dedicated-benefits-list li:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.15);
 }
 
 /* Process Steps — no bullets */
 .dedicated-process-list {
   max-width: 900px;
-  margin: 0 auto;
   text-align: center;
   padding-left: 0; /* remove default padding */
   list-style: none; /* remove bullets */
@@ -160,7 +137,7 @@ ol {
 
 
 /* CTA Section */
-.dedicated-hero-section .dedicated-hero-cta {
+.dedicated-hero-section {
   margin-top: 40px;
   display: flex;
   justify-content: center;
@@ -173,11 +150,7 @@ ol {
   background-image: url('../../assets/bottomBanner.webp'); /* your image */
   background-size: cover;
   background-position: center;
-  background-repeat: no-repeat;
-  filter: brightness(0.75);
   padding: 100px 20px;
-  width: 100%; /* full width */
-  min-height: 400px; /* adjust as needed */
   text-align: center;
   margin-bottom: 30px;
   color: #fff;
@@ -187,19 +160,18 @@ ol {
   content: '';
   position: absolute;
   top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0,0,0,0.4); /* dark overlay for readability */
-  filter: brightness(0.75);
-  z-index: 1;
   width: 100%; /* full width */
+  left: 0;
+  height: auto;
+  background: rgba(0,0,0,0.4); /* dark overlay for readability */
+  filter: brightness(0.30);
+  z-index: 1;
   min-height: 400px; /* adjust as needed */
 }
 
 .hero-bg h2,
 .hero-bg p,
-.hero-bg .dedicated-hero-cta {
+.hero-bg  {
   position: relative;
   z-index: 2;
   color: #ffffff;
@@ -218,7 +190,6 @@ ol {
   position: relative;
 }
 
-/* Vertical line */
 .process-timeline::before {
   content: "";
   position: absolute;
@@ -229,16 +200,12 @@ ol {
   background: #e5e7eb;
 }
 
-/* Each Step */
 .process-step {
-  display: flex;
-  align-items: flex-start;
-  margin-bottom: 60px;
   position: relative;
+  margin-bottom: 70px;
   text-align: center;
 }
 
-/* Step Icon Circle */
 .step-icon {
   width: 70px;
   height: 70px;
@@ -254,30 +221,14 @@ ol {
   z-index: 1;
 }
 
-/* Step Content */
 .step-content {
-  margin-left: 40px;
-}
-
-.step-label {
-  font-size: 14px;
-  font-weight: 600;
-  letter-spacing: 1px;
-  color: #9ca3af;
-  display: block;
-  margin-bottom: 5px;
+  margin-left: 60px;
 }
 
 .step-content h3 {
-  font-size: 28px;
-  margin-bottom: 10px;
-}
-
-.step-content p {
-  font-size: 16px;
-  color: #6b7280;
-  max-width: 600px;
-  line-height: 1.6;
+  font-size: 24px;
+  margin-bottom: 8px;
+  color: #111827;
 }
 /* Responsive Adjustments */
 @media (max-width: 1024px) {
@@ -293,44 +244,47 @@ ol {
 }
 
 @media (max-width: 768px) {
-  /* Hero section stacking */
+
   .dedicated-hero {
-    justify-content: center;
-    text-align: center;
-  }
-  .dedicated-hero-content {
-    padding: 0 20px;
-    text-align: center;
-  }
-  .dedicated-hero-cta {
-    justify-content: center;
+    height: 75vh;
   }
 
-  /* Benefits list full width */
+  .dedicated-hero-content h1 {
+    font-size: 28px;
+  }
+
+  .dedicated-hero-content p {
+    font-size: 16px;
+  }
+
   .dedicated-benefits-list {
     flex-direction: column;
-    gap: 20px;
-  }
-  .dedicated-benefits-list li {
-    width: 100%;
+    align-items: center;
   }
 
-  /* Timeline stack vertically */
-  .process-step {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
+  .dedicated-benefits-list li {
+    width: 100%;
+    max-width: 350px;
   }
+
+  .process-timeline::before {
+    display: none;
+  }
+
+  .process-step {
+    text-align: center;
+    padding-left: 0;
+  }
+
+  .step-icon {
+    position: relative;
+    left: 0;
+    margin: 0 auto 15px auto;
+  }
+
   .step-content {
     margin-left: 0;
-    margin-top: 15px;
   }
-  .process-timeline::before {
-    left: 50%;
-    transform: translateX(-50%);
-  }
-  .step-icon {
-    margin-bottom: 10px;
-  }
+
 }
 

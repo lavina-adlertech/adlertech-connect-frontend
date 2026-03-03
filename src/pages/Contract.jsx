@@ -62,7 +62,7 @@ const Contract = () => {
 
             {/* What is a Dedicated Team */}
             <section className="contract-section">
-                <h2 className="section-title">What is a Contract & Part-Time IT Resources?</h2>
+                <h1 className="trust-heading">What is a Contract & Part-Time IT Resources?</h1>
 
                 <div className="contract-row">
                   <div className="contract-content">
@@ -92,7 +92,7 @@ const Contract = () => {
                   ✔ Cost-Effective Solutions
                 </div>
                 <div className="contract-benefit-content">
-                  Save on recruitment, HR, and infrastructure costs while hiring experienced developers.
+                  Save on recruitment, HR and infrastructure costs while hiring experienced developers.
                 </div>
               </div>
 
@@ -137,7 +137,7 @@ const Contract = () => {
                    ✔ Full Control
                   </div>
                 <div className="contract-benefit-content">
-                  Manage priorities, workflows, and deadlines as if they are your in-house team.
+                  Manage priorities, workflows and deadlines as if they are your in-house team.
                 </div>
               </div>
 
@@ -150,9 +150,9 @@ const Contract = () => {
             <section className="contract-capabilities-section">
               <div className="contract-capabilities-container">
 
-                <h2 className="contract-capabilities-title">
+                <h1>
                   Our IT Resource Capabilities
-                </h2>
+                </h1>
 
                 <div className="contract-carousel">
 
@@ -229,16 +229,16 @@ const Contract = () => {
               <section className="contract-engagement-section">
                 <div className="contract-engagement-container">
 
-                  <h2 className="contract-engagement-title">
+                  <h1 className="contract-engagement-title">
                     Engagement Models
-                  </h2>
+                  </h1>
 
                   <div className="contract-engagement-grid">
 
                     <div className="contract-engagement-card">
                       <h3>Short-Term Contracts</h3>
                       <p>
-                        Ideal for temporary workload increases, system upgrades, or urgent projects.
+                        Ideal for temporary workload increases, system upgrades or urgent projects.
                       </p>
                     </div>
 
@@ -271,9 +271,9 @@ const Contract = () => {
               <section className="contract-beneficiaries-section">
                 <div className="contract-beneficiaries-container">
 
-                  <h2 className="contract-beneficiaries-title">
+                  <h1 className="contract-beneficiaries-title">
                     Who Can Benefit?
-                  </h2>
+                  </h1>
 
                   <div className="contract-beneficiaries-grid">
 

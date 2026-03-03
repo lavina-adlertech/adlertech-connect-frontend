@@ -1,0 +1,200 @@
+/* HERO */
+.industries-hero {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  overflow: hidden;
+}
+
+.industries-hero-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -2;
+}
+
+.industries-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.30);
+  z-index: -1;
+}
+
+.industries-hero-content {
+  position: relative;
+  z-index: 2;
+  color: #ffffff;
+  padding: 0 20px;
+}
+
+.industries-hero-content h1 {
+  font-size: 42px;
+  font-weight: 800;
+}
+
+/* HERO */
+.industries-hero {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  overflow: hidden;
+}
+
+.industries-hero-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -2;
+}
+
+.industries-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.30);
+  z-index: -1;
+}
+
+.industries-hero-content {
+  position: relative;
+  z-index: 2;
+  color: #ffffff;
+  padding: 0 20px;
+}
+
+.industries-hero-content h1 {
+  font-size: 42px;
+  font-weight: 800;
+}
+
+
+/* INDUSTRIES SECTION */
+.industries-section {
+  width: 100%;
+  padding: 120px 8%;
+  background: linear-gradient(to bottom, #f8fafc, #eef2ff);
+  text-align: center;
+  color: #13405B;
+}
+
+.industries-title {
+  font-size: 42px;
+  font-weight: 800;
+  margin-bottom: 25px;
+}
+
+.industries-intro {
+  max-width: 800px;
+  margin: 0 auto 80px auto;
+  font-size: 18px;
+  line-height: 1.8;
+  color: #475569;
+}
+
+/* GRID LAYOUT */
+
+.industries-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.industry-block {
+  background-color: #13405B;
+  width: 100%;
+  max-width: 1100px;
+  padding: 50px;
+  border-radius: 20px;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.06);
+  transition: all 0.4s ease;
+  text-align: center;
+}
+
+.industry-block:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.1);
+}
+
+/* Spacing between cards */
+.industry-block + .industry-block {
+  margin-top: 40px;
+}
+
+.industry-block h3 {
+  font-size: 26px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: white;
+}
+
+.industry-block p {
+  font-size: 17px;
+  line-height: 1.8;
+  color: white;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media (min-width: 992px) {
+  .industries-section {
+    gap: 50px;
+  }
+
+  .industry-block {
+    text-align: left;
+  }
+
+  .industry-block h3 {
+    text-align: left;
+  }
+
+  .industry-block p {
+    text-align: left;
+  }
+}
+
+@media (max-width: 768px) {
+
+  .industries-hero {
+    height: 70vh;
+  }
+
+  .industries-hero-content h1 {
+    font-size: 28px;
+  }
+
+  .industries-title {
+    font-size: 30px;
+  }
+
+  .industries-intro {
+    font-size: 16px;
+  }
+
+  .industry-block {
+    padding: 30px 20px;
+  }
+
+  .industry-block h3 {
+    font-size: 20px;
+  }
+
+  .industry-block p {
+    font-size: 15px;
+  }
+}

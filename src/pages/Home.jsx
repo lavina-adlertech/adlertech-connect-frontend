@@ -6,11 +6,12 @@ export default function Home() {
       {/* ================= SEO META ================= */}
       <Helmet>
         <title>
-          IT Staff Augmentation Services | Hire Remote Developers – AdlerTech Connect
+          IT Staff Augmentation Services | Hire Remote Developers – AdlerTech
+          Connect
         </title>
         <meta
           name="description"
-          content="Scale your tech team with flexible IT staff augmentation services. Hire remote, hybrid, or onsite developers on full-time or contract basis with fast onboarding."
+          content="Scale your tech team with flexible IT staff augmentation services. Hire remote, hybrid or onsite developers on full-time or contract basis with fast onboarding."
         />
         <meta name="robots" content="index, follow" />
         <link rel="canonical" href="https://www.adlertechconnect.com/" />
@@ -18,13 +19,7 @@ export default function Home() {
 
       {/* ================= HERO SECTION ================= */}
       <section className="hero">
-        <video
-          className="hero-video"
-          autoPlay
-          muted
-          loop
-          playsInline
-        >
+        <video className="hero-video" autoPlay muted loop playsInline>
           <source src="/staff-video.mp4" type="video/mp4" />
         </video>
 
@@ -32,15 +27,19 @@ export default function Home() {
 
         <div className="hero-content">
           {/* Main H1 for SEO */}
-           <h1>IT Staff Augmentation Services for Scalable Tech Teams</h1>
+          <h1>IT Staff Augmentation Services for Scalable Tech Teams</h1>
 
-            {/* H2 for hero headline (user-facing) */}
-            <h2>Hire Remote, Hybrid, or Onsite IT Talent—Faster & Smarter</h2>
+          {/* H2 for hero headline (user-facing) */}
+          <h2>Hire Remote, Hybrid or Onsite IT Talent - Faster & Smarter</h2>
 
           {/* CTA Buttons */}
           <div className="hero-buttons">
-            <a href="/hire-talent" className="btn-primary">Hire Developers</a>
-            <a href="/contact" className="btn-outline">Schedule a Call</a>
+            <a href="/hire-developers" className="btn">
+              Hire Developers
+            </a>
+            <a href="/schedule-call" className="btn">
+              Schedule a Call
+            </a>
           </div>
         </div>
       </section>
@@ -49,21 +48,23 @@ export default function Home() {
       <section className="intro-section">
         <div className="intro-container">
           {/* Hero body copy */}
-            <p>
-              AdlerTech Connect provides end-to-end <strong>IT staff augmentation services</strong> that help
-              businesses scale engineering teams quickly without long hiring cycles. From <strong>remote developers</strong> to onsite <strong>IT professionals</strong>, we deliver flexible talent solutions
-              aligned with your project and budget.
-            </p>
+          <p>
+            AdlerTech Connect provides end-to-end{" "}
+            <strong>IT staff augmentation services</strong> that help businesses
+            scale engineering teams quickly without long hiring cycles. From{" "}
+            <strong>remote developers</strong> to onsite{" "}
+            <strong>IT professionals</strong>, we deliver flexible talent
+            solutions aligned with your project and budget.
+          </p>
         </div>
       </section>
 
       {/* ================= TRUST & FEATURES SECTION ================= */}
       <section className="trust-section">
-        <h2 className="trust-heading">Trusted IT Staff Augmentation Partner</h2>
+        <h1 className="trust-heading">Trusted IT Staff Augmentation Partner</h1>
 
         <div className="marquee">
           <div className="marquee-track">
-
             {/* SET 1 */}
             <div className="trust-card soft-blue">
               <h3>Fast Onboarding</h3>
@@ -73,7 +74,7 @@ export default function Home() {
 
             <div className="trust-card soft-green">
               <h3>Flexible Models</h3>
-              <p>Full-time, contract, or part-time.</p>
+              <p>Full-time, contract or part-time.</p>
               <img src="/icons/flex.svg" alt="" />
             </div>
 
@@ -104,7 +105,7 @@ export default function Home() {
 
             <div className="trust-card soft-green">
               <h3>Flexible Models</h3>
-              <p>Full-time, contract, or part-time.</p>
+              <p>Full-time, contract or part-time.</p>
               <img src="/icons/flex.svg" alt="" />
             </div>
 
@@ -132,21 +133,27 @@ export default function Home() {
       {/* ================= WHY CHOOSE US SECTION ================= */}
       <section className="why-choose-section">
         <div className="why-choose-container">
-          <h2>Why Choose AdlerTech Connect?</h2>
+          <h1 className="trust-heading">Why Choose AdlerTech Connect</h1>
           <p>
-            We connect businesses with skilled IT professionals who integrate seamlessly into your
-            teams. Our model ensures faster onboarding, flexible contracts, and guaranteed quality.
+            We combine speed, quality and flexibility to help companies scale
+            their engineering teams without hiring delays.
           </p>
 
           <div className="why-choose-grid">
             <div className="why-item">
               <h4>Pre-Vetted Talent</h4>
-              <p>Expert developers and IT professionals rigorously screened for quality.</p>
+              <p>
+                Expert developers and IT professionals rigorously screened for
+                quality.
+              </p>
             </div>
 
             <div className="why-item">
               <h4>Flexible Engagement</h4>
-              <p>Remote, hybrid, or onsite hiring with contract and full-time options.</p>
+              <p>
+                Remote, hybrid or onsite hiring with contract and full-time
+                options.
+              </p>
             </div>
 
             <div className="why-item">
@@ -161,7 +168,9 @@ export default function Home() {
 
             <div className="why-item">
               <h4>Scalable Teams</h4>
-              <p>Easily scale your tech team up or down as project needs change.</p>
+              <p>
+                Easily scale your tech team up or down as project needs change.
+              </p>
             </div>
 
             <div className="why-item">
@@ -173,19 +182,21 @@ export default function Home() {
       </section>
 
       {/* ================= CALL TO ACTION SECTION ================= */}
-      {/* <section className="cta-section">
+      <section className="cta-section">
         <div className="cta-container">
-          <h2>Ready to Scale Your Tech Team?</h2>
+          <h1 className="trust-heading">Ready to Scale Your Tech Team?</h1>
           <p>
-            Get started with <strong>AdlerTech Connect</strong> today and access top IT talent
-            without long hiring cycles.
+            Get started with <strong>AdlerTech Connect</strong> today and access
+            top IT talent without long hiring cycles.
           </p>
-          <a href="/contact" className="btn-primary">Schedule a Call</a>
+          <a href="/schedule-call" className="home-schedule-btn">
+            Schedule a Call
+          </a>
         </div>
-        <div class="cta-image">
-          <img src="/src/assets/staff-augmentation.webp" alt="IT Talent"/>
+        <div className="cta-image">
+          <img src="/src/assets/staff-augmentation.webp" alt="IT Talent" />
         </div>
-      </section> */}
+      </section>
     </>
   );
 }

@@ -4,55 +4,54 @@ import { useEffect, useRef, useState } from "react";
 
 export default function Header() {
   const [scrolled, setScrolled] = useState(false);
-  const [showServices, setShowServices] = useState(false);
+  const [showServices, setShowServices] = useState(false); // desktop
+  const [mobileServicesOpen, setMobileServicesOpen] = useState(false); // mobile
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const servicesRef = useRef(null);
 
+  useEffect(() => {
+  if (mobileMenuOpen) {
+    document.body.style.overflow = "hidden";
+  } else {
+    document.body.style.overflow = "auto";
+  }
+}, [mobileMenuOpen]);
+  // ✅ FIXED scroll effect
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 50);
     };
 
-    const handleClickOutside = (e) => {
-      if (servicesRef.current && !servicesRef.current.contains(e.target)) {
-        setShowServices(false);
-      }
-    };
-
     window.addEventListener("scroll", handleScroll);
-    document.addEventListener("mousedown", handleClickOutside);
-
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-      document.removeEventListener("mousedown", handleClickOutside);
-    };
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   return (
     <header className={`header hero-header ${scrolled ? "scrolled" : ""}`}>
+      
       <div className="header-left">
         <img src="/logo.png" className="logo-img" alt="AdlerTech Connect" />
       </div>
 
+      {/* ================= DESKTOP NAV ================= */}
       <nav className="nav-links">
         <Link to="/">Home</Link>
 
-        {/* SERVICES MEGA MENU */}
-        <div className="services-menu" ref={servicesRef}>
-          <button
-            className="services-btn"
-            onClick={() => setShowServices(!showServices)}
-          >
-            Services
-          </button>
+        <div
+          className="services-menu"
+          ref={servicesRef}
+          onMouseEnter={() => setShowServices(true)}
+          onMouseLeave={() => setShowServices(false)}
+        >
+          <Link className="services-btn">Services</Link>
 
           {showServices && (
             <div className="services-dropdown">
               <ul>
-                <li><Link to="/StaffAugmentation" onClick={() => setShowServices(false)}>Staff Augmentation</Link></li>
-                <li><Link to="/dedicated" onClick={() => setShowServices(false)}>Dedicated Teams</Link></li>
-                <li><Link to="/contract" onClick={() => setShowServices(false)}>Contract / Part-Time Resources</Link></li>
-                <li><Link to="/remote" onClick={() => setShowServices(false)}>Remote / Hybrid / Onsite Models</Link></li>
+                <li><Link to="/StaffAugmentation">Staff Augmentation</Link></li>
+                <li><Link to="/dedicated">Dedicated Teams</Link></li>
+                <li><Link to="/contract">Contract / Part-Time Resources</Link></li>
+                <li><Link to="/remote">Remote / Hybrid / Onsite Models</Link></li>
               </ul>
             </div>
           )}
@@ -61,18 +60,19 @@ export default function Header() {
         <Link to="/industries">Industries</Link>
         <Link to="/technology">Technology</Link>
         <Link to="/how-it-works">How It Works</Link>
-        <Link to="/why-us">Why AdlerTech Connect</Link>
+        <Link to="/why">Why AdlerTech Connect</Link>
         <Link to="/case-studies">Case Studies</Link>
-        <Link to="/about">About Us</Link>
+        <Link to="/about-us">About Us</Link>
         <Link to="/contact">Contact Us</Link>
       </nav>
 
       <div className="header-right">
-        <Link to="/hire-talent" className="btn-primary">
+        <Link to="/hire-talents" className="btn">
           Hire Talent
         </Link>
       </div>
 
+      {/* ================= MOBILE MENU BUTTON ================= */}
       <div
         className="mobile-menu-btn"
         onClick={() => setMobileMenuOpen(true)}
@@ -80,11 +80,15 @@ export default function Header() {
         ☰
       </div>
 
+      {/* ================= MOBILE SIDEBAR ================= */}
       {mobileMenuOpen && (
-        <div className="mobile-overlay">
+        <div
+          className="mobile-overlay"
+          onClick={() => setMobileMenuOpen(false)}   // ✅ closes on outside click
+        >
           <aside
             className="mobile-sidebar"
-            onClick={(e) => e.stopPropagation()}
+            onClick={(e) => e.stopPropagation()}     // prevents close when clicking inside
           >
             <button
               className="close-btn"
@@ -95,43 +99,54 @@ export default function Header() {
 
             <nav className="mobile-nav">
               <Link to="/" onClick={() => setMobileMenuOpen(false)}>Home</Link>
-              
-              <div className="mobile-services">
-                <button
+
+              {/* MOBILE SERVICES DROPDOWN */}
+              <div className="mobile-services" onMouseEnter={() => setMobileServicesOpen(true)}
+                  onMouseLeave={() => setMobileServicesOpen(false)}>
+                <Link
                   className="mobile-services-btn"
-                  onClick={() => setShowServices(!showServices)}
+                  onClick={() => setMobileServicesOpen(!mobileServicesOpen)}
                 >
                   Services
-                  <span className={`arrow ${showServices ? "open" : ""}`}>▾</span>
-                </button>
+                </Link>
 
-                {showServices && (
+                {mobileServicesOpen && (
                   <div className="mobile-services-dropdown">
-                    <span><Link to="/StaffAugmentation" onClick={() => setMobileMenuOpen(false)}>
+                    <Link to="/StaffAugmentation" onClick={() => setMobileMenuOpen(false)}>
                       Staff Augmentation
-                    </Link></span>
-                    <span><Link to="/dedicated" onClick={() => setMobileMenuOpen(false)}>Dedicated Teams</Link></span>
-                    <span><Link to="/contract" onClick={() => setMobileMenuOpen(false)}>Contract / Part-Time Resources</Link></span>
-                    <span><Link to="/remote" onClick={() => setMobileMenuOpen(false)}>Remote / Hybrid / Onsite Models</Link></span>
+                    </Link>
+                    <Link to="/dedicated" onClick={() => setMobileMenuOpen(false)}>
+                      Dedicated Teams
+                    </Link>
+                    <Link to="/contract" onClick={() => setMobileMenuOpen(false)}>
+                      Contract / Part-Time Resources
+                    </Link>
+                    <Link to="/remote" onClick={() => setMobileMenuOpen(false)}>
+                      Remote / Hybrid / Onsite Models
+                    </Link>
                   </div>
                 )}
               </div>
+
               <Link to="/industries" onClick={() => setMobileMenuOpen(false)}>Industries</Link>
               <Link to="/technology" onClick={() => setMobileMenuOpen(false)}>Technology</Link>
               <Link to="/how-it-works" onClick={() => setMobileMenuOpen(false)}>How It Works</Link>
-              <Link to="/why-us" onClick={() => setMobileMenuOpen(false)}>Why AdlerTech</Link>
+              <Link to="/why" onClick={() => setMobileMenuOpen(false)}>Why AdlerTech</Link>
               <Link to="/case-studies" onClick={() => setMobileMenuOpen(false)}>Case Studies</Link>
-              <Link to="/about" onClick={() => setMobileMenuOpen(false)}>About Us</Link>
+              <Link to="/about-us" onClick={() => setMobileMenuOpen(false)}>About Us</Link>
               <Link to="/contact" onClick={() => setMobileMenuOpen(false)}>Contact</Link>
 
-              <Link to="/hire-talent" className="btn-primary mobile-cta">
+              <Link
+                to="/hire-talent"
+                className="btn-primary mobile-cta"
+                onClick={() => setMobileMenuOpen(false)}
+              >
                 Hire Talent
               </Link>
             </nav>
           </aside>
         </div>
       )}
-
     </header>
   );
 }

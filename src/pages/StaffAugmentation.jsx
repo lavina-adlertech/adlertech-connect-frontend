@@ -5,6 +5,7 @@ import { useState, useEffect, useRef } from "react";
 
 const StaffAugmentation = () => {
    const [current, setCurrent] = useState(0);
+   const [activeIndex, setActiveIndex] = useState(0);
   const intervalRef = useRef(null);
 
   const offers = [
@@ -66,7 +67,7 @@ const StaffAugmentation = () => {
               </title>
               <meta
                 name="description"
-                content="Trusted IT staff augmentation company offering remote, hybrid, and onsite developers for startups and enterprises."
+                content="Trusted IT staff augmentation company offering remote, hybrid and onsite developers for startups and enterprises."
               />
       </Helmet>
       {/* ================= HERO ================= */}
@@ -82,7 +83,7 @@ const StaffAugmentation = () => {
             </h2>
 
             <p className="hero-meta"><strong>
-              Our IT staff augmentation model allows you to hire skilled professionals on demand—without longterm commitments. We support short-term, long-term, and project-based staffing across multiple
+              Our IT staff augmentation model allows you to hire skilled professionals on demand—without longterm commitments. We support short-term, long-term and project-based staffing across multiple
               technologies.
               </strong>
             </p>
@@ -92,133 +93,120 @@ const StaffAugmentation = () => {
             </div> */}
 
             <div className="hero-cta">
-              <button className="btn-primary">Hire Remote Developers</button>
-              <button className="btn-primary">Dedicated Development Teams</button>
+              <a href="/hire-developers" className="btn">Hire Remote Developers</a>
+              <a href="/hire-developers" className="btn">Dedicated Development Teams</a>
             </div>
           </div>
         </section>
      
      {/* ================= WHAT IS STAFF AUGMENTATION ================= */}
       <section className="what-is-section">
-        <h2>What is Staff Augmentation?</h2>
-
+        <h2 className="trust-heading">What is Staff Augmentation?</h2>
         <p>
-          Staff augmentation enables businesses to extend their internal teams 
-          with highly skilled professionals without the long-term commitment 
+          Staff augmentation enables businesses to extend their internal teams
+          with highly skilled professionals without the long-term commitment
           of full-time hiring.
         </p>
-
-        {/* <h3 style={{textAlign: "center",marginTop: "18px"}}>Benefits</h3>
-
-        <div className="benefits-grid">
-          <div className="benefit-card">No lengthy recruitment cycles</div>
-          <div className="benefit-card">Reduced hiring & operational costs</div>
-          <div className="benefit-card">Access to specialized skills instantly</div>
-          <div className="benefit-card">Scale up or down based on demand</div>
-          <div className="benefit-card">Full project control</div>
-        </div> */}
       </section>
 
       {/* ================= BENEFITS SECTION (ENHANCED) ================= */}
-      <section className="benefits-section">
-        <div className="benefits-container">
+      {/* ================= BENEFITS SECTION ================= */}
+<section className="benefits-section">
+  <div className="benefits-container">
 
-          {/* LEFT CONTENT */}
-          <div className="benefits-left">
+    {/* LEFT CONTENT */}
+    <div className="benefits-left">
+      <span className="benefits-tag">
+        BENEFITS OF STAFF AUGMENTATION
+      </span>
 
-            <span className="benefits-tag">
-              BENEFITS OF STAFF AUGMENTATION
-            </span>
+      <div className="benefits-accordion">
 
-            {/* <p className="benefits-subtitle">
-              Access pre-vetted top-tier IT professionals ready to integrate
-              seamlessly into your team.
-            </p> */}
+        {[
+          {
+            title: "No lengthy recruitment cycles",
+            content:
+              "Skip job postings, resume screening, interviews and onboarding delays. Get pre-vetted developers deployed quickly so your projects start faster.",
+          },
+          {
+            title: "Reduced hiring & operational costs",
+            content:
+              "Save on recruitment expenses, infrastructure, employee benefits and long-term payroll commitments while maintaining high productivity.",
+          },
+          {
+            title: "Access to specialized skills instantly",
+            content:
+              "Tap into experienced professionals across AI, Cloud, DevOps, Data Engineering, Full-Stack and more — exactly when you need them.",
+          },
+          {
+            title: "Scale up or down based on demand",
+            content:
+              "Quickly expand your team during peak workloads and scale down when project needs reduce — without long-term commitments.",
+          },
+          {
+            title: "Full Project Control",
+            content:
+              "Maintain complete ownership of your workflows, tools and processes while augmented team members work as an extension of your in-house team.",
+          },
+        ].map((item, index) => (
+          <div
+            key={index}
+            className={`benefit-item ${
+              activeIndex === index ? "active" : ""
+            }`}
+          >
+            <div
+              className="benefit-header"
+              onClick={() =>
+                setActiveIndex(
+                  activeIndex === index ? null : index
+                )
+              }
+            >
+              ✔ {item.title}
+              <span className="arrow-icon">
+                {activeIndex === index ? "▲" : "▼"}
+              </span>
+            </div>
 
-            <div className="benefits-accordion">
-
-              <div className="benefit-item active">
-                <div className="benefit-header">
-                  ✔ No lengthy recruitment cycles
-                </div>
-                <div className="benefit-content">
-                  Skip job postings, resume screening, interviews, and onboarding delays.
-                  Get pre-vetted developers deployed quickly so your projects start faster.
-                </div>
-              </div>
-
-              <div className="benefit-item">
-                <div className="benefit-header">
-                  ✔ Reduced hiring & operational costs
-                </div>
-                <div className="benefit-content">
-                  Save on recruitment expenses, infrastructure, employee benefits,
-                  and long-term payroll commitments while maintaining high productivity.
-                </div>
-              </div>
-
-              <div className="benefit-item">
-                <div className="benefit-header">
-                  ✔ Access to specialized skills instantly
-                </div>
-                <div className="benefit-content">
-                  Tap into experienced professionals across AI, Cloud, DevOps,
-                  Data Engineering, Full-Stack, and more — exactly when you need them.
-                </div>
-              </div>
-
-              <div className="benefit-item">
-                <div className="benefit-header">
-                  ✔ Scale up or down based on demand
-                </div>
-                <div className="benefit-content">
-                  Quickly expand your team during peak workloads and scale down
-                  when project needs reduce — without long-term commitments.
-                </div>
-              </div>
-
-              <div className="benefit-item">
-                <div className="benefit-header">
-                   ✔ Full Project Control
-                  </div>
-                <div className="benefit-content">
-                  Maintain complete ownership of your workflows, tools, and processes
-                  while augmented team members work as an extension of your in-house team.
-                </div>
-              </div>
-
+            <div className="benefit-content">
+              {item.content}
             </div>
           </div>
+        ))}
 
-          {/* RIGHT SIDE IMAGES */}
-          <div className="benefits-right">
+      </div>
+    </div>
 
-            <div className="profile-card card1">
-              <img src="/src/assets/dev1.jpg" alt="Developer 1" />
-              <h4>Rahul M.</h4>
-              <p>Sr. Data Scientist</p>
-            </div>
+    {/* RIGHT SIDE IMAGES */}
+    <div className="benefits-right">
 
-            <div className="profile-card card2">
-              <img src="/src/assets/dev2.jpg" alt="Developer 2" />
-              <h4>Maria P.</h4>
-              <p>Sr. Frontend Developer</p>
-            </div>
+      <div className="profile-card card1">
+        <img src="/src/assets/dev1.jpg" alt="Developer 1" />
+        <h4>Rahul M.</h4>
+        <p>Sr. Data Scientist</p>
+      </div>
 
-            <div className="profile-card card3">
-              <img src="/src/assets/dev4.webp" alt="Developer 3" />
-              <h4>Anita L.</h4>
-              <p>Sr. Cloud Engineer</p>
-            </div>
+      <div className="profile-card card2">
+        <img src="/src/assets/dev2.jpg" alt="Developer 2" />
+        <h4>Maria P.</h4>
+        <p>Sr. Frontend Developer</p>
+      </div>
 
-          </div>
+      <div className="profile-card card3">
+        <img src="/src/assets/dev4.webp" alt="Developer 3" />
+        <h4>Anita L.</h4>
+        <p>Sr. Cloud Engineer</p>
+      </div>
 
-        </div>
-      </section>
+    </div>
+
+  </div>
+</section>
 
       {/* ================= SERVICES SNAPSHOT ================= */}
       <section className="snapshot-section">
-  <h2>Services Snapshot</h2>
+  <h1 className="trust-heading">Services Snapshot</h1>
 
   <p className="section-intro">
     Flexible, scalable IT staffing tailored to your business needs.
@@ -322,7 +310,7 @@ const StaffAugmentation = () => {
       <p>
         Short-term experts hired for specific project requirements, ensuring fast
         execution and flexible scaling. Ideal for urgent deliverables, technology
-        migrations, or specialized tasks that require immediate expertise without
+        migrations or specialized tasks that require immediate expertise without
         long-term commitment. This model helps businesses accelerate timelines while
         maintaining full operational control and cost efficiency.
       </p>
@@ -340,7 +328,7 @@ const StaffAugmentation = () => {
         Flexible specialists aligned with your budget and project scope, delivering
         consistent progress without the cost of a full-time hire. This model is
         perfect for startups and growing businesses that require expert support on a
-        limited schedule while maintaining productivity, quality, and agility.
+        limited schedule while maintaining productivity, quality and agility.
       </p>
     </div>
     <div className="engagement-image">
@@ -355,7 +343,7 @@ const StaffAugmentation = () => {
       <p>
         Dedicated professionals working exclusively for your organization, fully
         integrated with your internal teams and workflows. This model ensures
-        long-term collaboration, deeper product understanding, and consistent
+        long-term collaboration, deeper product understanding and consistent
         performance while reducing recruitment complexity and operational overhead.r your organization,
         fully integrated with your internal teams.
       </p>
@@ -373,7 +361,7 @@ const StaffAugmentation = () => {
         Fully managed development teams focused on your product roadmap and business
         objectives. From planning and design to development and deployment, the team
         operates as an extension of your company—ensuring scalability, faster
-        innovation cycles, and seamless collaboration with complete transparency.
+        innovation cycles and seamless collaboration with complete transparency.
       </p>
     </div>
     <div className="engagement-image">
@@ -386,7 +374,7 @@ const StaffAugmentation = () => {
 
       {/* ================= DEPLOYMENT MODELS (VERY IMPORTANT) ================= */}
       <section className="deployment-section">
-        <h2>Engagement & Deployment Models</h2>
+        <h2 className="section-title">Engagement & Deployment Models</h2>
 
         <p className="section-intro">
           Choose the hiring model that fits your team structure and business goals.
@@ -434,63 +422,50 @@ const StaffAugmentation = () => {
 
       {/* ================= USE CASES ================= */}
       <section className="use-case-section">
-  <h2>Use Cases</h2>
-
-  <div className="use-case-grid">
-
-    <div className="use-card">
-      <img src="/src/assets/product.avif" alt="Product Development" />
-      <div className="use-card-content">
-        {/* <span className="use-tag">USE CASE</span> */}
-        <h3>Product Development Acceleration</h3>
-        <p>Build and launch scalable products faster with dedicated engineering support.</p>
-        <a href="#">Read More</a>
-      </div>
-    </div>
-
-    <div className="use-card">
-      <img src="/src/assets/mvp.webp" alt="MVP Building" />
-      <div className="use-card-content">
-        {/* <span className="use-tag">USE CASE</span> */}
-        <h3>MVP Development for Startups</h3>
-        <p>Rapid MVP development to validate ideas and attract early investors.</p>
-        <a href="#">Read More</a>
-      </div>
-    </div>
-
-    <div className="use-card">
-      <img src="/src/assets/scaling.png" alt="Scaling Delivery" />
-      <div className="use-card-content">
-        {/* <span className="use-tag">USE CASE</span> */}
-        <h3>Scaling Engineering Teams</h3>
-        <p>Expand delivery capacity with skilled professionals aligned to your roadmap.</p>
-        <a href="#">Read More</a>
-      </div>
-    </div>
-
-        <div className="use-card">
-      <img src="/src/assets/skill-gap.webp" alt="Skill Gap Filling" />
-      <div className="use-card-content">
-        {/* <span className="use-tag">USE CASE</span> */}
-        <h3>Skill Gap Filling</h3>
-        <p>
-          Bridge critical skill gaps with specialized experts in emerging
-          technologies, ensuring project continuity and high-quality outcomes.
-        </p>
-        <a href="#">Read More</a>
-      </div>
-    </div>
-
-  </div>
-</section>
+        <h2 className="section-title">Use Cases</h2>
+        <div className="use-case-grid">
+          <div className="use-card">
+            <img src="/src/assets/product.avif" alt="Product Development" />
+            <div className="use-card-content">
+              <h3>Product Development Acceleration</h3>
+              <p>Build and launch scalable products faster with dedicated engineering support.</p>
+              <a href="#">Read More</a>
+            </div>
+          </div>
+          <div className="use-card">
+            <img src="/src/assets/mvp.webp" alt="MVP Building" />
+            <div className="use-card-content">
+              <h3>MVP Development for Startups</h3>
+              <p>Rapid MVP development to validate ideas and attract early investors.</p>
+              <a href="#">Read More</a>
+            </div>
+          </div>
+          <div className="use-card">
+            <img src="/src/assets/scaling.png" alt="Scaling Delivery" />
+            <div className="use-card-content">
+              <h3>Scaling Engineering Teams</h3>
+              <p>Expand delivery capacity with skilled professionals aligned to your roadmap.</p>
+              <a href="#">Read More</a>
+            </div>
+          </div>
+          <div className="use-card">
+            <img src="/src/assets/skill-gap.webp" alt="Skill Gap Filling" />
+            <div className="use-card-content">
+              <h3>Skill Gap Filling</h3>
+              <p>Bridge critical skill gaps with specialized experts in emerging technologies.</p>
+              <a href="#">Read More</a>
+            </div>
+          </div>
+        </div>
+      </section>
 
 
       {/* ================= FINAL CTA ================= */}
       <section class="final-cta">
   <div class="cta-content">
-    <h2>Need Ready-to-Deploy IT Talent?</h2>
+    <h2 className="trust-heading">Need Ready-to-Deploy IT Talent?</h2>
     <p>Whether you need to fill a short-term gap or scale long-term delivery, we’ve got you covered.</p>
-    <button class="btn-primary">👉 Request Resource Profiles</button>
+    <a href="/schedule-call" className="staff-schedule-btn">👉 Request Resource Profiles</a>
   </div>
   <div class="cta-image">
     <img src="/src/assets/it-staff-augmentation-hero.png" alt="IT Talent"/>
@@ -498,8 +473,8 @@ const StaffAugmentation = () => {
 </section>
 
 
-
     </main>
+    
   );
 };
 
