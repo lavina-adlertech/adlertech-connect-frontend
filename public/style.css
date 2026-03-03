@@ -262,7 +262,7 @@ section p {
 /* FOOTER */
 .footer {
   background: #ffff; /* Darker for modern look */
-  color: #f1f5f9;
+  color: black;
   padding: 60px 20px 30px;
   font-family: "Inter", sans-serif;
 }
@@ -292,7 +292,7 @@ section p {
 .footer-desc {
   font-size: 16px;
   line-height: 1.6;
-  color: #cbd5e1;
+  color: black;
 }
 
 .footer-col h4 {
@@ -330,7 +330,7 @@ section p {
 .social-icons a {
   display: inline-block;
   margin-right: 12px;
-  color: #cbd5e1;
+  color: black;
   font-size: 18px;
   transition:
     color 0.3s ease,
@@ -349,7 +349,7 @@ section p {
   padding-top: 20px;
   text-align: center;
   font-size: 14px;
-  color: #94a3b8;
+  color: black;
 }
 
 .hero {
